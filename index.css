@@ -1,0 +1,57 @@
+/* 
+глобальныые переменные внутри данного файла
+:root {
+    --card-fill: whitesmoke;
+    --card-text: blue;
+} 
+*/
+
+.page {
+    font-family: sans-serif;
+}
+
+.page__title {
+    margin: 0;
+    padding: 20px;
+}
+
+.card-set {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill, minmax(200px, 1fr)
+    );
+    gap: 20px;
+    padding: 20px;
+    background-color: silver;
+}
+
+.card-set--blue {
+    /* Переопределяем существующие значения переменных родителя */
+    --card-fill: aliceblue;
+    --card-text: darkblue;
+
+    background-color: cornflowerblue;
+}
+
+.card-set--green {
+    /* Переопределяем существующие значения переменных родителя */
+    --card-fill: honeydew;
+    --card-text: darkgreen;
+
+    background-color: darkgreen;
+}
+
+.card {
+    /* Если так писать - то не появятся fullback - полефилы для кроссбраузерности
+    --card-fill: whitesmoke;
+    --card-text: blue; 
+    */
+
+    padding: 5px 20px;
+    background-color: var(--card-fill, whitesmoke);
+    color: var(--card-text, red);
+}
+
+.card__title::before {
+    line-height: 1;
+}
